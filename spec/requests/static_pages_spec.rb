@@ -17,4 +17,12 @@ describe "Static pages" do
       expect(page).to have_content('Todo App')
     end
   end
+
+  describe "About page" do
+
+    it "should have the content 'About'" do
+      visit '/static_pages/about'
+      expect(page).to have_content('About')
+    end
+  end
 end
