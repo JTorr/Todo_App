@@ -20,10 +20,10 @@ class TodosController < ApplicationController
   def index
     @todo = Todo.where(user_id: current_user)
   end
+  #
+  # private
 
-  private
-
-    def todo_params
-      params.require(:todo, :title, :description), permit(:due_date)
-    end
+    # def todo_params
+    #   params.require(:todo, :title, :description, :completed).permit(:due_date)
+    # end
 end
