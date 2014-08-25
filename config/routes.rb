@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   get 'users/new'
 
   root 'static_pages#home'
@@ -9,5 +10,7 @@ Rails.application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
 
   match '/signup', to: 'users#new', via: 'get'
+
+  match '/users', to: 'devise/registrations#create', via: 'post'
 
 end
